@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>amazuppai0</title>
+
+  <!-- Google Fonts: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #fcfcfc;
+      color: #111827;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.4s ease;
+    }
+
+    .container {
+      max-width: 800px;
+      width: 90%;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(15px);
+      transition: opacity 0.8s cubic-bezier(0.2, 0, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0, 0.2, 1);
+    }
+
+    .container.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h1 {
+      font-size: 2.75rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      color: #0d1117;
+      letter-spacing: -0.025em;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 2.5rem;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .projects {
+      display: flex;
+      justify-content: center;
+    }
+
+    .project-card {
+      padding: 1.25rem 1.75rem;
+      background: #f3f4f6;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateY(10px);
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+      background: #fff;
+      border: 1px solid #e2e8f0;
+    }
+
+    .project-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .project-card a {
+      text-decoration: none;
+      color: #1a1a1a;
+      font-weight: 500;
+      font-size: 1.25rem;
+      letter-spacing: -0.01em;
+    }
+
+    .footer {
+      margin-top: 3.5rem;
+      font-size: 0.9rem;
+      color: #9ca3af;
+    }
+
+    .footer a {
+      color: #6b7280;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="page">
+    <h1>amazuppai0</h1>
+    <p>the japanese sweet n' sour (up down up)</p>
+
+    <div class="projects">
+      <div class="project-card" id="tiad-card">
+        <a href="https://github.com/devnnei/tiad" target="_blank">tiad</a>
+      </div>
+    </div>
+
+    <div class="footer">
+      built with care • <a href="https://devnnei.github.io">contact</a> • 2025
+    </div>
+  </div>
+
+  <script>
+    // Trigger animations on load
+    document.addEventListener("DOMContentLoaded", () => {
+      setTimeout(() => {
+        document.getElementById('page').classList.add('visible');
+      }, 150);
+
+      setTimeout(() => {
+        document.getElementById('tiad-card').classList.add('visible');
+      }, 500);
+    });
+  </script>
+</body>
+</html>
